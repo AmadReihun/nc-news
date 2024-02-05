@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import ArticlesList from "../components/ArticlesList";
 
 export default function Articles() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <ArticlesList />
+    </>
+  );
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import TopicsList from "../components/TopicsList";
 
 export default function Topics() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <TopicsList />
+    </>
+  );
 }

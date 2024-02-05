@@ -1,20 +1,25 @@
 import Image from "react-bootstrap/Image";
-import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
     <>
-      <h1>Welcome to NC News Platform</h1>
-
-      <img
-        src="https://lh3.googleusercontent.com/proxy/1DojxYRlTi6CD72cS5KahKHdGkEt5t7vJcpZ4boGRTgEJDUhZ29Cz1hD7V5Ff2yFoMdK3qL2WwzxkcvJhOKDK_-4WsfpkxaWDdYAwLcjUGQ3vRFsjaR-i_07lzZluS8B"
-        alt="Colourful welcome photo"
-        className="img-fluid"
-      />
-      <br />
+      <div>
+        <h2>Topics</h2>
+        <br />
+        <a href="/topics" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="https://www.diplomacy.edu/wp-content/uploads/2022/06/Diplo-Topics-June2022-meta.webp"
+            alt="articles photo with dices"
+            fluid
+            rounded
+          />
+        </a>
+      </div>
       <br />
       <div>
         <h2>Articles</h2>
+        <br />
         <a href="/articles" target="_blank" rel="noopener noreferrer">
           <Image
             src="https://www.thesaurus.com/e/wp-content/uploads/2021/11/20211104_articles_1000x562-790x310.png"
@@ -24,6 +29,7 @@ export default function Home() {
           />
         </a>
       </div>
+      <Footer />
     </>
   );
 }
