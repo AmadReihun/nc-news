@@ -22,9 +22,9 @@ export default function Navbar() {
             About
           </Nav.Link>
         </Nav>
-        <Button type="button" className="btn btn-info" size="sm">
+        {/* <Button type="button" className="btn btn-info" size="sm">
           Profile
-        </Button>
+        </Button> */}
       </Container>
     </NavbarBs>
   );

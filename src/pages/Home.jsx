@@ -10,7 +10,7 @@ export default function Home() {
         <a href="/topics" target="_blank" rel="noopener noreferrer">
           <Image
             src="https://www.diplomacy.edu/wp-content/uploads/2022/06/Diplo-Topics-June2022-meta.webp"
-            alt="articles photo with dices"
+            alt="topic image for the home page"
             fluid
             rounded
           />
@@ -23,7 +23,7 @@ export default function Home() {
         <a href="/articles" target="_blank" rel="noopener noreferrer">
           <Image
             src="https://www.thesaurus.com/e/wp-content/uploads/2021/11/20211104_articles_1000x562-790x310.png"
-            alt="articles photo with a Pink Orange background"
+            alt="articles photo with a Pink Orange background for the home page"
             fluid
             rounded
           />
