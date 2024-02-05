@@ -1,26 +1,27 @@
-// import { useState } from 'react'np
-import { useEffect } from 'react';
-import { fetchTopics } from './utils/Api';
-
-
+import { Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Home from "./pages/Home";
+import Topics from "./pages/Topics";
+import Articles from "./pages/Articles";
+import Users from "./pages/Users";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
 
 function App() {
-//   const searchForTopics = () => {
-//     fetchTopics()
-//     .then((response) => {
-//       console.log(response);
-//     });
-//   };
-
-//   useEffect(() => {
-//     searchForTopics();
-//   }, []);
-
   return (
     <>
-      
+      <Navbar />
+      <Container className="nb-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/topics" element={<Topics />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
