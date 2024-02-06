@@ -6,11 +6,12 @@ import Articles from "./pages/Articles";
 import Users from "./pages/Users";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Container className="nb-4">
         <Routes>
           <Route path="/" element={<Home />} />
