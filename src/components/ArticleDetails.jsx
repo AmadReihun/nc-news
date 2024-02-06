@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticles } from "../utils/api";
 import { Image } from "react-bootstrap";
+import CommentsList from "./CommentsList";
 
 export default function ArticleDetails() {
   const { article_id } = useParams();
@@ -53,6 +54,8 @@ export default function ArticleDetails() {
         <span>Likes : {article.votes}</span>
         <span className="ms-3">Comments : {article.comment_count}</span>
       </article>
+
+      <CommentsList />
     </>
   );
 }
