@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
-import { fetchArticles } from "../utils/Api";
+import { Button, Col, Row } from "react-bootstrap";
+import { fetchArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const searchForArticles = () => {
     fetchArticles().then((response) => {
-      
       setArticles(response.data.article);
+      setIsLoading(false);
     });
   };
 
   useEffect(() => {
     searchForArticles();
   }, []);
+
+  if (isLoading) return <p>Loading your requested Page, please wait</p>;
 
   return (
     <>
@@ -33,36 +36,15 @@ export default function ArticlesList() {
 
       <div>
         <br />
-        <ul>
-          
-          {articles?.map(
-            ({
-              author,
-              title,
-              article_id,
-              topic,
-              created_at,
-              votes,
-              article_img_url,
-              comment_count,
-            }) => {
-              return (
-                
-                <ArticleCard
-                  key={article_id}
-                  author={author}
-                  title={title}
-                  article_id={article_id}
-                  topic={topic}
-                  created_at={created_at}
-                  votes={votes}
-                  article_img_url={article_img_url}
-                  comment_count={comment_count}
-                />
-              );
-            }
-          )}
-        </ul>
+        <Row md={2} xs={1} lg={3} className="g-4">
+          {articles.map((article) => {
+            return (
+              <Col key={article.article_id}>
+                <ArticleCard {...article} />
+              </Col>
+            );
+          })}
+        </Row>
       </div>
     </>
   );
