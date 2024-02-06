@@ -7,6 +7,7 @@ import Users from "./pages/Users";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import ArticleDetails from "./components/ArticleDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/users" element={<Users />} />
           <Route path="/About" element={<About />} />
+          <Route path="/articles/:article_id" element={<ArticleDetails />} />
         </Routes>
       </Container>
     </>

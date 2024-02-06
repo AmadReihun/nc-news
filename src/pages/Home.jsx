@@ -20,7 +20,7 @@ export default function Home() {
       <div>
         <h2>Articles</h2>
         <br />
-        <a href="/articles" target="_blank" rel="noopener noreferrer">
+        <a href="/articles"  rel="noopener noreferrer">
           <Image
             src="https://www.thesaurus.com/e/wp-content/uploads/2021/11/20211104_articles_1000x562-790x310.png"
             alt="articles photo with a Pink Orange background for the home page"
