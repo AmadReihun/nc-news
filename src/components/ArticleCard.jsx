@@ -13,7 +13,7 @@ export default function ArticleCard({
 }) {
   return (
     <>
-      <Link target="_blank" to={`/articles/${article_id}`}>
+      <Link to={`/articles/${article_id}`}>
         <Image
           style={{
             display: "block",

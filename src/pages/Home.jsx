@@ -7,12 +7,13 @@ export default function Home() {
       <div>
         <h2>Topics</h2>
         <br />
-        <a href="/topics" target="_blank" rel="noopener noreferrer">
+        <a href="/topics" rel="noopener noreferrer">
           <Image
             src="https://www.diplomacy.edu/wp-content/uploads/2022/06/Diplo-Topics-June2022-meta.webp"
             alt="topic image for the home page"
             fluid
             rounded
+            style={{width:"60rem", height:"15rem"}}
           />
         </a>
       </div>
@@ -26,6 +27,7 @@ export default function Home() {
             alt="articles photo with a Pink Orange background for the home page"
             fluid
             rounded
+            style={{width:"60rem", height:"15rem"}}
           />
         </a>
       </div>

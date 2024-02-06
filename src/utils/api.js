@@ -8,3 +8,7 @@ export const fetchArticles = (article_id = "") => {
   return ncApi.get(`/articles/${article_id}`);
 };
 
+export const fetchComments = (article_id = "") => {
+  return ncApi.get(`/articles/${article_id}/comments`);
+};
+
