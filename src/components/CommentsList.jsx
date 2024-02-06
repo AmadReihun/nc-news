@@ -5,9 +5,8 @@ import { Col, Row } from "react-bootstrap";
 import CommentCard from "./CommentCard";
 
 export default function CommentsList() {
-
   const { article_id } = useParams();
-  
+
   const [Comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,12 +21,11 @@ export default function CommentsList() {
     searchForComments();
   }, []);
 
-
   return (
     <>
       <div>
         <br />
-        <Row md={2} xs={1} lg={3} className="g-4">
+        <Row md={1} xs={1} lg={1} className="g-2 ms-10">
           {Comments.map((comment) => {
             return (
               <Col key={comment.comment_id}>
@@ -38,5 +36,5 @@ export default function CommentsList() {
         </Row>
       </div>
     </>
-  )
+  );
 }

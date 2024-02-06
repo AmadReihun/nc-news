@@ -10,16 +10,16 @@ export default function CommentCard({
 }) {
   return (
     <>
-      <Card >
-        <small>Author : {author}</small>
-        
-        <small>
+      <Card>
+        <small className="ms-2" style={{margin:"10px"}}>Author : {author}</small>
+
+        <small className="ms-2">
           Published at : {new Date(created_at).toLocaleDateString()}
-        </small>
+        </small >
         <br />
-        <small>{body}</small>
+        <small className="ms-2">{body}</small>
         <br />
-        <small>Likes : {votes}</small>
+        <small className="ms-2">Likes : {votes}</small>
         <br />
       </Card>
     </>

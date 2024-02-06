@@ -30,7 +30,8 @@ export default function ArticleDetails() {
         <Image
           style={{
             display: "block",
-            width: "900%",
+            width: "40rem",
+            height: "20rem",
             marginLeft: "auto",
             marginRight: "auto",
           }}
