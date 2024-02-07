@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchArticles } from "../utils/api";
 import { Image } from "react-bootstrap";
 import CommentsList from "./CommentsList";
+import VoteArticle from "./VoteArticle";
 
 export default function ArticleDetails() {
   const { article_id } = useParams();
@@ -51,10 +52,9 @@ export default function ArticleDetails() {
         <br />
         <br />
         <p>{article.body}</p>
-
-        <span>Likes : {article.votes}</span>
-        <span className="ms-3">Comments : {article.comment_count}</span>
       </article>
+
+      <VoteArticle {...article} />
 
       <CommentsList />
     </>
