@@ -12,3 +12,7 @@ export const fetchComments = (article_id = "") => {
   return ncApi.get(`/articles/${article_id}/comments`);
 };
 
+export const patchArticleVotes = (article_id, number) => {
+  return ncApi.patch(`/articles/${article_id}`, {inc_votes: number})
+}
+
