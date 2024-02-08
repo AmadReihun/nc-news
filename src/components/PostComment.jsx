@@ -12,14 +12,14 @@ import {
 } from "react-bootstrap";
 import { postComment } from "../utils/api";
 
-export default function PostNewComment({ article_id, searchForComments}) {
+export default function PostNewComment({ article_id, searchForComments }) {
   const [comment, setComment] = useState({
     username: "jessjelly",
     body: "",
   });
-  const [optMessage, setOptMessage] = useState('')
+  const [optMessage, setOptMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
 
   const commentHandler = (event) => {
     setComment((currComment) => {
@@ -28,19 +28,20 @@ export default function PostNewComment({ article_id, searchForComments}) {
   };
 
   const handleSubmit = (event) => {
+    setButtonDisabled(true);
     event.preventDefault();
-    setOptMessage('Your comment has been submitted')
+    setOptMessage("sending your comment");
     postComment(article_id, comment.username, comment.body)
       .then((response) => {
-        searchForComments()
+        setOptMessage("Your comment has been submitted");
+        searchForComments();
         setIsError(false);
-        console.log(response.data.comment);
+        setButtonDisabled(false);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         setIsError(true);
       });
-      comment.body='';
+    comment.body = "";
   };
 
   if (isError) {
@@ -51,11 +52,10 @@ export default function PostNewComment({ article_id, searchForComments}) {
     );
   }
 
-
   return (
     <>
       <p>Post your comment</p>
-      <p style={{color: "green"}}>{optMessage}</p>
+      <p style={{ color: "green" }}>{optMessage}</p>
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <label htmlFor="body"></label>
@@ -70,35 +70,16 @@ export default function PostNewComment({ article_id, searchForComments}) {
           />
         </InputGroup>
         <br />
-        <Button variant="primary" type="submit" size="sm">
+        <Button
+          variant="primary"
+          type="submit"
+          size="sm"
+          style={{ backgroundColor: isButtonDisabled ? "grey" : null }}>
           Comment
         </Button>
       </Form>
-      
+
       <hr />
     </>
   );
-}
-
-// postComment(article_id, comment.username, comment.body )
-
-// axios
-//   .post("https://nc-news-9ihg.onrender.com/api/articles/34/comments", {
-//     username: comment.username,
-//     body: comment.body,
-//   })
-
-{
-  /* <InputGroup className="mb-3">
-        <label htmlFor="username"></label>
-          <Form.Control
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            id="username"
-            required
-            value={comment.username}
-            onChange={commentHandler}
-          />
-        </InputGroup> */
 }
