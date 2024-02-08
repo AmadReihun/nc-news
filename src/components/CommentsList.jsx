@@ -3,6 +3,8 @@ import { fetchComments } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import CommentCard from "./CommentCard";
+import Expandable from "./Expandable";
+import PostNewComment from "./PostComment";
 
 export default function CommentsList() {
   const { article_id } = useParams();
@@ -21,9 +23,19 @@ export default function CommentsList() {
     searchForComments();
   }, []);
 
+  if (isLoading) return <p>Loading your requested Page, please wait</p>;
+
   return (
     <>
       <div>
+        <PostNewComment
+          searchForComments={searchForComments}
+          article_id={article_id}
+        />
+        <br />
+        <h4>Comments</h4>
+        {/* <Expandable> */}
+
         <br />
         <Row md={1} xs={1} lg={1} className="g-2 ms-10">
           {Comments.map((comment) => {
@@ -34,6 +46,8 @@ export default function CommentsList() {
             );
           })}
         </Row>
+        {/* </Expandable> */}
+        <br />
       </div>
     </>
   );

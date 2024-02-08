@@ -36,7 +36,7 @@ export default function ArticleCard({
       <small>Topic : {topic}</small>
       <br />
       <small>Likes : {votes}</small>
-      <small className="ms-3">Comments : {comment_count}</small>
+      {/* <small className="ms-3">Comments : {comment_count}</small> */}
       <br />
     </>
   );

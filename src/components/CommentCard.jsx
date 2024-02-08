@@ -11,11 +11,13 @@ export default function CommentCard({
   return (
     <>
       <Card>
-        <small className="ms-2" style={{margin:"10px"}}>Author : {author}</small>
-
+        <small className="ms-2" style={{ margin: "10px" }}>
+          Author : {author}
+        </small>
+ 
         <small className="ms-2">
           Published at : {new Date(created_at).toLocaleDateString()}
-        </small >
+        </small>
         <br />
         <small className="ms-2">{body}</small>
         <br />

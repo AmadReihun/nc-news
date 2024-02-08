@@ -55,7 +55,7 @@ export default function ArticleDetails() {
       </article>
 
       <VoteArticle {...article} />
-
+      <hr />
       <CommentsList />
     </>
   );
