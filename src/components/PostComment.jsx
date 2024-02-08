@@ -28,12 +28,12 @@ export default function PostNewComment({ article_id, searchForComments }) {
   };
 
   const handleSubmit = (event) => {
-    setButtonDisabled(true);
     event.preventDefault();
+    setButtonDisabled(true);
     setOptMessage("sending your comment");
     postComment(article_id, comment.username, comment.body)
-      .then((response) => {
-        setOptMessage("Your comment has been submitted");
+      .then(() => {
+        setOptMessage("Your comment has been posted successfully");
         searchForComments();
         setIsError(false);
         setButtonDisabled(false);
