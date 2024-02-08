@@ -8,7 +8,6 @@ export const fetchArticles = (article_id = "") => {
   return ncApi.get(`/articles/${article_id}`);
 };
 
-
 // export const fetchArticlesByParams = (article_id = "", author, topic, sort_by, order) => {
 //   return ncApi.get(`/articles`, {
 //     params: {author: author, topic: topic, sort_by: sort_by, order: order}
@@ -28,4 +27,8 @@ export const postComment = (article_id, username, body) => {
     username: `${username}`,
     body: `${body}`,
   });
+};
+
+export const deleteComment = (comment_id) => {
+  return ncApi.delete(`/comments/${comment_id}`);
 };

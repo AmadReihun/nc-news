@@ -41,7 +41,7 @@ export default function CommentsList() {
           {Comments.map((comment) => {
             return (
               <Col key={comment.comment_id}>
-                <CommentCard {...comment} />
+                <CommentCard searchForComments={searchForComments} {...comment} />
               </Col>
             );
           })}
