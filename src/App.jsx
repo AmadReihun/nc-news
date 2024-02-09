@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import ArticleDetails from "./components/ArticleDetails";
 import PostComment from "./components/PostComment";
 import ArticlesList from "./components/ArticlesList";
+import TopicDetails from "./components/TopicDetails";
 
 function App() {
   return (
@@ -23,8 +24,7 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/About" element={<About />} />
           <Route path="/articles/:article_id" element={<ArticleDetails />} />
-          {/* <Route path="/topics/:topic" element={<ArticlesList />} /> */}
-          
+          <Route path="/topics/:topic" element={<TopicDetails />} />
         </Routes>
       </Container>
     </>
