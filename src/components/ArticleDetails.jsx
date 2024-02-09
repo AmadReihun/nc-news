@@ -13,14 +13,14 @@ export default function ArticleDetails() {
 
   const searchForArticleById = () => {
     fetchArticles(article_id)
-    .then((response) => {
-      setArticle(response.data.article[0]);
-      setIsLoading(false);
-      setIsError(false);
-    })
-    .catch(() => {
-      setIsError(true);
-    });
+      .then((response) => {
+        setArticle(response.data.article[0]);
+        setIsLoading(false);
+        setIsError(false);
+      })
+      .catch(() => {
+        setIsError(true);
+      });
   };
 
   useEffect(() => {

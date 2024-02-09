@@ -14,14 +14,15 @@ export default function CommentsList() {
   const [isError, setIsError] = useState(false);
 
   const searchForComments = () => {
-    fetchComments(article_id).then((response) => {
-      setComments(response.data.comment);
-      setIsLoading(false);
-      setIsError(false);
-    })
-    .catch(() => {
-      setIsError(true);
-    });
+    fetchComments(article_id)
+      .then((response) => {
+        setComments(response.data.comment);
+        setIsLoading(false);
+        setIsError(false);
+      })
+      .catch(() => {
+        setIsError(true);
+      });
   };
 
   useEffect(() => {
@@ -54,7 +55,10 @@ export default function CommentsList() {
           {Comments.map((comment) => {
             return (
               <Col key={comment.comment_id}>
-                <CommentCard searchForComments={searchForComments} {...comment} />
+                <CommentCard
+                  searchForComments={searchForComments}
+                  {...comment}
+                />
               </Col>
             );
           })}

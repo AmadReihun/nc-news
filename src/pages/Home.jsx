@@ -13,7 +13,7 @@ export default function Home() {
             alt="topic image for the home page"
             fluid
             rounded
-            style={{width:"60rem", height:"15rem"}}
+            style={{ width: "60rem", height: "15rem" }}
           />
         </a>
       </div>
@@ -21,13 +21,13 @@ export default function Home() {
       <div>
         <h2>Articles</h2>
         <br />
-        <a href="/articles"  rel="noopener noreferrer">
+        <a href="/articles" rel="noopener noreferrer">
           <Image
             src="https://www.thesaurus.com/e/wp-content/uploads/2021/11/20211104_articles_1000x562-790x310.png"
             alt="articles photo with a Pink Orange background for the home page"
             fluid
             rounded
-            style={{width:"60rem", height:"15rem"}}
+            style={{ width: "60rem", height: "15rem" }}
           />
         </a>
       </div>

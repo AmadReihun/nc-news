@@ -8,7 +8,7 @@ export default function CommentCard({
   author,
   votes,
   created_at,
-  searchForComments
+  searchForComments,
 }) {
   return (
     <>
@@ -26,7 +26,11 @@ export default function CommentCard({
         <small className="ms-2">Likes : {votes}</small>
         <small className="ms-2">Comment ID : {comment_id}</small>
       </Card>
-      <DeleteComments comment_id={comment_id} author={author} searchForComments={searchForComments}/>
+      <DeleteComments
+        comment_id={comment_id}
+        author={author}
+        searchForComments={searchForComments}
+      />
     </>
   );
 }

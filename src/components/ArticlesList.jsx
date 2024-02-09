@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import { fetchArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import axios from "axios";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const { topic } = useParams();
-
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const sortByQuery = searchParams.get(topic);
 
   const searchForArticles = () => {
     axios
@@ -34,25 +30,21 @@ export default function ArticlesList() {
   }, []);
 
   if (isError) {
-      return (
-        <p style={{ backgroundColor: "orange" }}>
-          Action did not work, Please reload the page & try again shortly!
-        </p>
-      );
-    }
+    return (
+      <p style={{ backgroundColor: "orange" }}>
+        Action did not work, Please reload the page & try again shortly!
+      </p>
+    );
+  }
 
   if (isLoading) return <p>Loading your requested Page, please wait</p>;
-
-  
 
   return (
     <>
       <div className="d-grid gap-2">
-        {/* <Link to={`/articles?sort_by=votes`}> */}
-          <Button variant="success" size="md">
-            Sort by votes
-          </Button>
-        {/* </Link> */}
+        <Button variant="success" size="md">
+          Sort by votes
+        </Button>
 
         <Button type="button" variant="success" size="md">
           Sort by comment count

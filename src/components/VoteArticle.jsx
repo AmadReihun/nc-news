@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { patchArticleVotes } from "../utils/api";
-import { Button } from "react-bootstrap";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 
 export default function VoteArticle({ votes, article_id, comment_count }) {
@@ -56,7 +55,6 @@ export default function VoteArticle({ votes, article_id, comment_count }) {
   return (
     <>
       <span>Likes : {Likes}</span>
-      {/* <span className="ms-3">Comments : {comment_count}</span> */}
       <br />
       <br />
       <div className="justify-content-left">

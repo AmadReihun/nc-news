@@ -3,7 +3,6 @@ export default function Footer() {
     <>
       <footer
         id="sticky-footer"
-        
         className="flex-shrink-0 py-3 bg-dark text-white-50"
         style={{
           position: "fixed",

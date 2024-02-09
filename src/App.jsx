@@ -5,12 +5,9 @@ import Topics from "./pages/Topics";
 import Articles from "./pages/Articles";
 import Users from "./pages/Users";
 import About from "./pages/About";
-import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import ArticleDetails from "./components/ArticleDetails";
-import PostComment from "./components/PostComment";
 import ArticlesList from "./components/ArticlesList";
-// import TopicDetails from "./components/TopicDetails";
 
 function App() {
   return (
