@@ -8,6 +8,7 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   const { topic } = useParams();
 
   // const [searchParams, setSearchParams] = useSearchParams();
@@ -21,6 +22,10 @@ export default function ArticlesList() {
       .then((response) => {
         setArticles(response.data.article);
         setIsLoading(false);
+        setIsError(false);
+      })
+      .catch(() => {
+        setIsError(true);
       });
   };
 
@@ -28,7 +33,17 @@ export default function ArticlesList() {
     searchForArticles();
   }, []);
 
+  if (isError) {
+      return (
+        <p style={{ backgroundColor: "orange" }}>
+          Action did not work, Please reload the page & try again shortly!
+        </p>
+      );
+    }
+
   if (isLoading) return <p>Loading your requested Page, please wait</p>;
+
+  
 
   return (
     <>

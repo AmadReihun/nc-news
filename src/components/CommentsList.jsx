@@ -11,17 +11,30 @@ export default function CommentsList() {
 
   const [Comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const searchForComments = () => {
     fetchComments(article_id).then((response) => {
       setComments(response.data.comment);
       setIsLoading(false);
+      setIsError(false);
+    })
+    .catch(() => {
+      setIsError(true);
     });
   };
 
   useEffect(() => {
     searchForComments();
   }, []);
+
+  if (isError) {
+    return (
+      <p style={{ backgroundColor: "orange" }}>
+        Action did not work, Please reload the page & try again shortly!
+      </p>
+    );
+  }
 
   if (isLoading) return <p>Loading your requested Page, please wait</p>;
 

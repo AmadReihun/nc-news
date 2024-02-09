@@ -26,11 +26,3 @@ export const postComment = (article_id, username, body) => {
 export const deleteComment = (comment_id) => {
   return ncApi.delete(`/comments/${comment_id}`);
 };
-
-
-
-// export const fetchArticlesByQuery = (author, topic, sort_by, order) => {
-//   return ncApi.get(`/articles`, {
-//     params: { topic: topic, author: author, sort_by: sort_by, order: order },
-//   });
-// };

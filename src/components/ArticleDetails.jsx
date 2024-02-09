@@ -9,17 +9,31 @@ export default function ArticleDetails() {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const searchForArticleById = () => {
-    fetchArticles(article_id).then((response) => {
+    fetchArticles(article_id)
+    .then((response) => {
       setArticle(response.data.article[0]);
       setIsLoading(false);
+      setIsError(false);
+    })
+    .catch(() => {
+      setIsError(true);
     });
   };
 
   useEffect(() => {
     searchForArticleById();
   }, []);
+
+  if (isError) {
+    return (
+      <p style={{ backgroundColor: "orange" }}>
+        The requested article does not exist!
+      </p>
+    );
+  }
 
   if (isLoading) return <p>Loading your requested Page, please wait</p>;
 
