@@ -11,19 +11,18 @@ export default function Topics() {
             Coding
           </Button>
         </Link>
-        
+
         <Link to={`/topics/football`} className="d-grid gap-2">
           <Button variant="success" size="sm">
             Football
           </Button>
         </Link>
-        
+
         <Link to={`/topics/cooking`} className="d-grid gap-2">
           <Button variant="success" size="sm">
             Cooking
           </Button>
         </Link>
-        
       </div>
     </>
   );

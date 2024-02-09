@@ -33,7 +33,10 @@ export default function ArticleCard({
       <br />
       <small>Published at : {new Date(created_at).toLocaleDateString()}</small>
       <br />
-      <small>Topic : {topic}</small>
+      <Link to={`/topics/${topic}`}>
+        <small>Topic : {topic}</small>
+      </Link>
+
       <br />
       <small>Likes : {votes}</small>
       {/* <small className="ms-3">Comments : {comment_count}</small> */}

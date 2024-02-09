@@ -4,10 +4,8 @@ const ncApi = axios.create({
   baseURL: `https://nc-news-9ihg.onrender.com/api`,
 });
 
-export const fetchArticles = (article_id = "", topic) => {
-  return ncApi.get(`/articles/${article_id}`, {
-    params: { topic: topic },
-  });
+export const fetchArticles = (article_id = "") => {
+  return ncApi.get(`/articles/${article_id}`);
 };
 
 export const fetchComments = (article_id = "") => {
@@ -28,6 +26,8 @@ export const postComment = (article_id, username, body) => {
 export const deleteComment = (comment_id) => {
   return ncApi.delete(`/comments/${comment_id}`);
 };
+
+
 
 // export const fetchArticlesByQuery = (author, topic, sort_by, order) => {
 //   return ncApi.get(`/articles`, {
