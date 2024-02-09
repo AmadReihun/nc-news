@@ -37,6 +37,11 @@ export default function ArticlesList({topic}) {
         <Button variant="success" size="md">
           Sort by votes
         </Button>
+        <Button variant="success" size="md">
+          Ascending and descending
+        </Button>
+
+        
       </div>
 
       <div>
