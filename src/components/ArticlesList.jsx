@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { fetchArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import axios from "axios";
 
-export default function ArticlesList() {
+export default function ArticlesList({topic}) {
+  
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const searchForArticles = () => {
-    fetchArticles().then((response) => {
+    axios.get(`https://nc-news-9ihg.onrender.com/api/articles`, {
+      params: {topic: topic},
+    })
+    .then((response) => {
       setArticles(response.data.article);
       setIsLoading(false);
     });

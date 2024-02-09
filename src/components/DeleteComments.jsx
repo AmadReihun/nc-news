@@ -2,25 +2,28 @@ import { Button } from "react-bootstrap";
 import { deleteComment } from "../utils/api";
 import { useState } from "react";
 
-export default function DeleteComments({ comment_id,author, searchForComments }) {
-
+export default function DeleteComments({
+  comment_id,
+  author,
+  searchForComments,
+}) {
   const [optMessage, setOptMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [isButtonDisabled, setButtonDisabled] = useState(false);
-  
+
   const handleDelete = () => {
     setButtonDisabled(true);
     setOptMessage("deleting your comment");
     deleteComment(comment_id)
-    .then(() => {
-      setOptMessage("Your comment has been deleted");
+      .then(() => {
+        setOptMessage("Your comment has been deleted");
         searchForComments();
         setIsError(false);
         setButtonDisabled(false);
-    })
-    .catch(() => {
-      setIsError(true);
-    });
+      })
+      .catch(() => {
+        setIsError(true);
+      });
   };
 
   if (isError) {
@@ -35,7 +38,12 @@ export default function DeleteComments({ comment_id,author, searchForComments })
     return (
       <>
         <p style={{ color: "green" }}>{optMessage}</p>
-        <Button variant="danger" size="sm" type="button" onClick={handleDelete}>
+        <Button
+          variant="danger"
+          size="sm"
+          type="button"
+          style={{ backgroundColor: isButtonDisabled ? "grey" : null }}
+          onClick={handleDelete}>
           Delete
         </Button>
       </>
