@@ -8,12 +8,12 @@ export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const { topic } = useParams();
+  const { topic, sort_by } = useParams();
 
   const searchForArticles = () => {
     axios
       .get(`https://nc-news-9ihg.onrender.com/api/articles`, {
-        params: { topic: topic },
+        params: { topic: topic, sort_by },
       })
       .then((response) => {
         setArticles(response.data.article);
