@@ -40,6 +40,7 @@ export default function ArticleCard({
       <br />
       <small>Likes : {votes}</small>
       <br />
+      <small>Comments : {comment_count}</small>
     </>
   );
 }
